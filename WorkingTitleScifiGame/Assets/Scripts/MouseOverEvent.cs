@@ -14,5 +14,5 @@ public class MouseOverEvent : MonoBehaviour
     {
         myText.color = Color.blue;
     }
-    //
+    
 }
