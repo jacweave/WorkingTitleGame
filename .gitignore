@@ -1,1 +1,16 @@
 WorkingTitleScifiGame/Temp/UnityLockfile
+
+WorkingTitleScifiGame/Temp
+WorkingTitleScifiGame/Library
+
+WorkingTitleScifiGame/ExportedObj/
+WorkingTitleScifiGame/obj/
+WorkingTitleScifiGame/*.svd
+WorkingTitleScifiGame/*.userprefs
+WorkingTitleScifiGame/*.csproj
+WorkingTitleScifiGame/*.pidb
+WorkingTitleScifiGame/*.suo
+WorkingTitleScifiGame/*.sln
+WorkingTitleScifiGame/*.user
+WorkingTitleScifiGame/*.unityproj
+WorkingTitleScifiGame/*.booproj
