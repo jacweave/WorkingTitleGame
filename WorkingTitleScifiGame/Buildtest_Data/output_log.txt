@@ -1,49 +1,23 @@
-Initialize engine version: 5.1.3f1 (b0a23b31c3d8)
-GfxDevice: creating device client; threaded=1
-Direct3D:
-    Version:  Direct3D 11.0 [level 11.0]
-    Renderer: NVIDIA GeForce GTX 760 (ID=0x1187)
-    Vendor:   NVIDIA
-    VRAM:     1989 MB
+
+    VRAM:     1990 MB
 Begin MonoManager ReloadAssembly
-Platform assembly: C:\Users\CWeaver\Source\Repos\WorkingTitleGame\WorkingTitleScifiGame\Buildtest_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading C:\Users\CWeaver\Source\Repos\WorkingTitleGame\WorkingTitleScifiGame\Buildtest_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\Users\CWeaver\Source\Repos\WorkingTitleGame\WorkingTitleScifiGame\Buildtest_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading C:\Users\CWeaver\Source\Repos\WorkingTitleGame\WorkingTitleScifiGame\Buildtest_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: C:\Users\CWeaver\Source\Repos\WorkingTitleGame\WorkingTitleScifiGame\Buildtest_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading C:\Users\CWeaver\Source\Repos\WorkingTitleGame\WorkingTitleScifiGame\Buildtest_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-Platform assembly: C:\Users\CWeaver\Source\Repos\WorkingTitleGame\WorkingTitleScifiGame\Buildtest_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
-Loading C:\Users\CWeaver\Source\Repos\WorkingTitleGame\WorkingTitleScifiGame\Buildtest_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-Platform assembly: C:\Users\CWeaver\Source\Repos\WorkingTitleGame\WorkingTitleScifiGame\Buildtest_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
-Loading C:\Users\CWeaver\Source\Repos\WorkingTitleGame\WorkingTitleScifiGame\Buildtest_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
-Platform assembly: C:\Users\CWeaver\Source\Repos\WorkingTitleGame\WorkingTitleScifiGame\Buildtest_Data\Managed\System.Core.dll (this message is harmless)
-- Completed reload, in  0.039 seconds
-desktop: 1920x1080 120Hz; virtual: 1920x1080 at 0,0
+Platform assembly: I:\Programming\Personal\Game Development\ScifiWTGame\WorkingTitleGame\WorkingTitleScifiGame\Buildtest_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading I:\Programming\Personal\Game Development\ScifiWTGame\WorkingTitleGame\WorkingTitleScifiGame\Buildtest_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: I:\Programming\Personal\Game Development\ScifiWTGame\WorkingTitleGame\WorkingTitleScifiGame\Buildtest_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading I:\Programming\Personal\Game Development\ScifiWTGame\WorkingTitleGame\WorkingTitleScifiGame\Buildtest_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: I:\Programming\Personal\Game Development\ScifiWTGame\WorkingTitleGame\WorkingTitleScifiGame\Buildtest_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading I:\Programming\Personal\Game Development\ScifiWTGame\WorkingTitleGame\WorkingTitleScifiGame\Buildtest_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+- Completed reload, in  0.034 seconds
+desktop: 1920x1080 60Hz; virtual: 5280x1080 at -1440,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-Platform assembly: C:\Users\CWeaver\Source\Repos\WorkingTitleGame\WorkingTitleScifiGame\Buildtest_Data\Managed\System.dll (this message is harmless)
+Platform assembly: I:\Programming\Personal\Game Development\ScifiWTGame\WorkingTitleGame\WorkingTitleScifiGame\Buildtest_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: I:\Programming\Personal\Game Development\ScifiWTGame\WorkingTitleGame\WorkingTitleScifiGame\Buildtest_Data\Managed\System.dll (this message is harmless)
 Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 3.154204 ms
+UnloadTime: 2.804711 ms
 
-Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 182.
-Total: 0.142721 ms (FindLiveObjects: 0.016962 ms CreateObjectMapping: 0.009358 ms MarkObjects: 0.112305 ms  DeleteObjects: 0.003217 ms)
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 161.
+Total: 0.106946 ms (FindLiveObjects: 0.009640 ms CreateObjectMapping: 0.007832 ms MarkObjects: 0.087063 ms  DeleteObjects: 0.001807 ms)
 
-Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.290707 ms
-
-Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 188.
-Total: 0.135409 ms (FindLiveObjects: 0.012575 ms CreateObjectMapping: 0.008188 ms MarkObjects: 0.110843 ms  DeleteObjects: 0.003217 ms)
-
-Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.347737 ms
-
-Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 195.
-Total: 0.142429 ms (FindLiveObjects: 0.021642 ms CreateObjectMapping: 0.008188 ms MarkObjects: 0.109088 ms  DeleteObjects: 0.003217 ms)
-
-Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.304160 ms
-
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 188.
-Total: 0.142429 ms (FindLiveObjects: 0.014038 ms CreateObjectMapping: 0.008773 ms MarkObjects: 0.115815 ms  DeleteObjects: 0.003217 ms)
 

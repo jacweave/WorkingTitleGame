@@ -39,18 +39,45 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>I:/Programming/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>I:/Programming/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Data Models\Actions\AttackAction.cs" />
+     <Compile Include="Assets\Scripts\Data Models\Actions\BaseAction.cs" />
+     <Compile Include="Assets\Scripts\Data Models\Actions\UtilityAction.cs" />
+     <Compile Include="Assets\Scripts\Data Models\Actions\WaitAction.cs" />
+     <Compile Include="Assets\Scripts\Data Models\BaseBuildable.cs" />
+     <Compile Include="Assets\Scripts\Data Models\BaseControllable.cs" />
+     <Compile Include="Assets\Scripts\Data Models\BaseInstance.cs" />
+     <Compile Include="Assets\Scripts\Data Models\BaseMap.cs" />
+     <Compile Include="Assets\Scripts\Data Models\BasePlayer.cs" />
+     <Compile Include="Assets\Scripts\Data Models\BaseTile.cs" />
+     <Compile Include="Assets\Scripts\Data Models\Buildings\BuildingBuildable.cs" />
+     <Compile Include="Assets\Scripts\Data Models\Buildings\BuildingControllable.cs" />
+     <Compile Include="Assets\Scripts\Data Models\Dimension.cs" />
+     <Compile Include="Assets\Scripts\Data Models\MetaGame\AIPlayer.cs" />
+     <Compile Include="Assets\Scripts\Data Models\MetaGame\BattleInstance.cs" />
+     <Compile Include="Assets\Scripts\Data Models\MetaGame\BattleMap.cs" />
+     <Compile Include="Assets\Scripts\Data Models\MetaGame\BattleTile.cs" />
+     <Compile Include="Assets\Scripts\Data Models\MetaGame\HumanPlayer.cs" />
+     <Compile Include="Assets\Scripts\Data Models\Node.cs" />
+     <Compile Include="Assets\Scripts\Data Models\Units\UnitBuildable.cs" />
+     <Compile Include="Assets\Scripts\Data Models\Units\UnitControllable.cs" />
      <Compile Include="Assets\Scripts\HexGridGen.cs" />
      <Compile Include="Assets\Scripts\LoadNextMenu.cs" />
      <Compile Include="Assets\Scripts\MouseOverEvent.cs" />
  <Reference Include="UnityEngine.UI">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ <HintPath>I:/Programming/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Networking">
+ <HintPath>I:/Programming/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Analytics">
+ <HintPath>I:/Programming/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
@@ -59,7 +86,7 @@
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
- <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+ <HintPath>I:/Programming/Unity/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
