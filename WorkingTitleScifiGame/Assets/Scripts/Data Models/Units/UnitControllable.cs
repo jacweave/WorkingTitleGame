@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class UnitControllable : BaseControllable {
 
     //Fields
+    #region UnitControllable/Fields
     private int _movRange;
     private int _movStatus;
     private int _healthCap;
@@ -13,8 +14,10 @@ public class UnitControllable : BaseControllable {
     private int _defStat;
     private int _offStat;
     private int _mainRange;
+    #endregion
 
     //Properties
+    #region UnitControllable/Properties
     public int MoveRange { get { return _movRange; } set { _movRange = value; } }
     public int MoveStatus { get { return _movStatus; } set { _movStatus = value; } }
     public int HealthCapacity { get { return _healthCap; } set { _healthCap = value; } }
@@ -23,8 +26,17 @@ public class UnitControllable : BaseControllable {
     public int DefenseStat { get { return _defStat; } set { _defStat = value; } }
     public int OffenseStat { get { return _offStat; } set { _offStat = value; } }
     public int MainActionRange { get { return _mainRange; } set { _mainRange = value; } }
+    #endregion
 
-	// Use this for initialization
+    //Constructors
+    #region UnitControllable/Constructors
+    public UnitControllable() : base()
+    {
+        
+    }
+    #endregion
+
+    // Use this for initialization
 	void Start () {
 	
 	}

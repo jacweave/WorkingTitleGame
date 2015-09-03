@@ -1,8 +1,8 @@
 WorkingTitleScifiGame/Temp/UnityLockfile
 
 WorkingTitleScifiGame/Temp
-WorkingTitleScifiGame/Library
-
+WorkingTitleScifiGame/Library/metadata
+WorkingTitleScifiGame/Library/ShaderCache
 WorkingTitleScifiGame/ExportedObj/
 WorkingTitleScifiGame/obj/
 WorkingTitleScifiGame/*.svd
