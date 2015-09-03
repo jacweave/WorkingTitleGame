@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Controllable>
+	<ControllableType>Unit</ControllableType>
+	<ControllableAttributes>
+		<VisibilityRange>...</VisibilityRange>
+		<Size>...</Size>
+		<SpritePath>...</SpritePath>			<!-- Should be path to sprite resource; Art/Sprites/Units/... -->
+		<MoveRange>...</MoveRange>
+		<HealthCapacity>...</HealthCapacity>
+		<DefenseStat>...</DefenseStat>
+		<OffenseStat>...</OffenseStat>
+		<MainActionRange>...</MainActionRange>		<!-- E.g. attack -->
+	</ControllableAttributes>
+</Controllable>

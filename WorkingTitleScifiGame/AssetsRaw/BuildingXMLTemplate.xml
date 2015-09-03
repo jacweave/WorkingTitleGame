@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Controllable>
+	<ControllableType>Building</ControllableType>
+	<ControllableAttributes>
+		<VisibilityRange>...</VisibilityRange>
+		<Size>...</Size>
+		<SpritePath>...</SpritePath>			<!-- Should be path to sprite resource; Art/Sprites/Units/... -->
+		<CapturePoints>...</CapturePoints>		<!-- Points required to capture the building -->
+	</ControllableAttributes>
+</Controllable>
