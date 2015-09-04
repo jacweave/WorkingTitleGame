@@ -20,7 +20,7 @@ public class BaseInstance : MonoBehaviour
     #region BaseInstance/Constructors
     public BaseInstance()
     {
-
+        Players = new List<BasePlayer> { (HumanPlayer)SessionHandler.Session["Players"], new AIPlayer() };
     }
 
     public BaseInstance(List<BasePlayer> p)
