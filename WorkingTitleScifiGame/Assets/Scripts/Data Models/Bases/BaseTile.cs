@@ -49,4 +49,14 @@ public class BaseTile : MonoBehaviour {
     {
         return Contents.Count == 0;
     }
+
+    public void AddContent(object o)
+    {
+        Contents.Add(o);
+    }
+
+    public bool RemoveContent(object o)
+    {
+        return Contents.Remove(o);
+    }
 }

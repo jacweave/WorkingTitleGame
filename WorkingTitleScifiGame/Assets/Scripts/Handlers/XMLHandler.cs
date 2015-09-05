@@ -26,14 +26,14 @@ public class XMLHandler : MonoBehaviour {
 	
 	}
 
-    private static Dictionary<string,object> ReadControllable(string path)
+    private static Dictionary<string,object> ReadBuildable(string path)
     {
         Reader = new XmlTextReader(path);
         Dictionary<string, object> attrDict = new Dictionary<string, object>();
-        Reader.ReadToFollowing("Controllable");
-        Reader.ReadToFollowing("ControllableType");
-        attrDict.Add("ControllableType", Reader.Value);
-        Reader.ReadToFollowing("ControllableAttributes");
+        Reader.ReadToFollowing("Buildable");
+        Reader.ReadToFollowing("BuildableType");
+        attrDict.Add("BuildableType", Reader.Value);
+        Reader.ReadToFollowing("BuildableAttributes");
 
         while (Reader.Read())
         {
@@ -59,11 +59,11 @@ public class XMLHandler : MonoBehaviour {
         return attrDict;
     }
 
-    public static UnitControllable FillUnit(string path)
+    public static UnitBuildable FillUnit(string path)
     {
-        var attrDict = ReadControllable(path);
+        var attrDict = ReadBuildable(path);
 
-        UnitControllable unit = new UnitControllable
+        UnitBuildable unit = new UnitBuildable
         {
             VisibilityRange = (int)attrDict["VisibilityRange"],
             Size = (int)attrDict["Size"],
@@ -79,11 +79,11 @@ public class XMLHandler : MonoBehaviour {
         return unit;
     }
 
-    public static BuildingControllable FillBuilding(string path)
+    public static BuildingBuildable FillBuilding(string path)
     {
-        var attrDict = ReadControllable(path);
+        var attrDict = ReadBuildable(path);
 
-        BuildingControllable building = new BuildingControllable
+        BuildingBuildable building = new BuildingBuildable
         {
             VisibilityRange = (int)attrDict["VisibilityRange"],
             Size = (int)attrDict["Size"],
@@ -93,5 +93,29 @@ public class XMLHandler : MonoBehaviour {
         building.Sprite.sprite = Resources.Load<Sprite>(attrDict["SpritePath"].ToString());
 
         return building;
+    }
+
+    public static List<BuildingBuildable> LoadBuildingBuildables()
+    {
+        List<BuildingBuildable> buildables = new List<BuildingBuildable>();
+        var xmls = Directory.GetFiles(Directory.GetCurrentDirectory() + "\\Assets\\Resources\\XML\\Buildings");
+        foreach (var p in xmls)
+        {
+            buildables.Add(FillBuilding(p));
+        }
+
+        return buildables;
+    }
+
+    public static List<UnitBuildable> LoadUnitBuildables()
+    {
+        List<UnitBuildable> buildables = new List<UnitBuildable>();
+        var xmls = Directory.GetFiles(Directory.GetCurrentDirectory() + "\\Assets\\Resources\\XML\\Units");
+        foreach (var p in xmls)
+        {
+            buildables.Add(FillUnit(p));
+        }
+
+        return buildables;
     }
 }
