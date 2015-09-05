@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Buildable>
+	<BuildableType>Unit</BuildableType>
+	<BuildableAttributes>
+		<UnitName>Frigate</UnitName>
+		<VisibilityRange>5</VisibilityRange>
+		<Size>1</Size>
+		<weight>2</weight>				<!--weight affects the ability of the unit to pass terrain-->
+		<SpritePath>...</SpritePath>			<!-- Should be path to sprite resource; Art/Sprites/Units/... -->
+		<MoveRange>5</MoveRange>
+		<HealthCapacity>10</HealthCapacity>
+		<DefenseStat>2</DefenseStat>
+		<OffenseStat>4</OffenseStat>
+		<MainActionRange>1</MainActionRange>		<!-- E.g. attack -->
+	</BuildableAttributes>
+</Buildable>
