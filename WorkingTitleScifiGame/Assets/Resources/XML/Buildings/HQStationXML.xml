@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Buildable>
+	<BuildableType>Building</BuildableType>
+	<BuildableAttributes>
+		<BuildingName>HQStation</BuildingName>
+		<VisibilityRange>10</VisibilityRange>
+		<Size>1</Size>
+		<ResourceCount>2000</ResourceCount>
+		<Action>Repair</Action>
+		<SpritePath>...</SpritePath>			<!-- Should be path to sprite resource; Art/Sprites/Buildings/... -->
+		<CapturePoints>20</CapturePoints>		<!-- Points required to capture the building -->
+	</BuildableAttributes>
+</Buildable>

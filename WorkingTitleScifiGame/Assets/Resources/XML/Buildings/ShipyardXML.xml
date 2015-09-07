@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Buildable>
+	<BuildableType>Building</BuildableType>
+	<BuildableAttributes>
+		<BuildingName>Shipyard</BuildingName>
+		<VisibilityRange>5</VisibilityRange>
+		<Size>1</Size>
+		<ResourceCount>0</ResourceCount>
+		<Action>Build</Action>
+		<SpritePath>...</SpritePath>			<!-- Should be path to sprite resource; Art/Sprites/Buildings/... -->
+		<CapturePoints>20</CapturePoints>		<!-- Points required to capture the building -->
+	</BuildableAttributes>
+</Buildable>
