@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Dimension : MonoBehaviour {
+public class Dimension {
 
     //Fields
     private int _dimX;

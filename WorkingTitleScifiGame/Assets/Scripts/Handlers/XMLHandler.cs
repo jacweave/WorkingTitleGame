@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Xml;
 using System.IO;
 
-public class XMLHandler : MonoBehaviour {
+public class XMLHandler {
 
     //Fields
     #region XMLHandler/Fields

@@ -6,7 +6,7 @@ public class BattleInstance : BaseInstance {
 
     //Fields
     #region BattleInstance/Fields
-    private BasePlayer _turn;
+    private BasePlayer _turn = new BasePlayer();
     private List<UnitBuildable> _units;
     private List<BuildingBuildable> _buildings;
     private Queue<BasePlayer> _turnTrack;
@@ -22,45 +22,31 @@ public class BattleInstance : BaseInstance {
 
     //Constructors
     #region BattleInstance/Constructors
-    public BattleInstance() : base()
+    void Init()
     {
         Units = XMLHandler.LoadUnitBuildables();
         Buildings = XMLHandler.LoadBuildingBuildables();
-        PlayerTurn = Players[0];
+        //PlayerTurn = Players[0];
         TurnTracker = new Queue<BasePlayer>(Players.GetRange(1, Players.Count - 1));
         PlayerTurn.StartTurn();
+    }
+
+    public BattleInstance() : base()
+    {
+        Init();
     }
 
     public BattleInstance(List<BasePlayer> p) : base(p)
     {
-        Units = XMLHandler.LoadUnitBuildables();
-        Buildings = XMLHandler.LoadBuildingBuildables();
-        PlayerTurn = Players[0];
-        Map = (BattleMap)Map;
-        PlayerTurn = Players[0];
-        TurnTracker = new Queue<BasePlayer>(Players.GetRange(1, Players.Count - 1));
-        PlayerTurn.StartTurn();
+        Init();
+        Map = BattleMap.RandomMap();
     }
 
     public BattleInstance(BattleMap map, List<BasePlayer> p) : base(map, p)
     {
-        Units = XMLHandler.LoadUnitBuildables();
-        Buildings = XMLHandler.LoadBuildingBuildables();
-        PlayerTurn = Players[0];
-        TurnTracker = new Queue<BasePlayer>(Players.GetRange(1, Players.Count - 1));
-        PlayerTurn.StartTurn();
+        Init();
     }
     #endregion
-
-    // Use this for initialization
-	void Start () {
-        
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 
     public bool CheckEndTurn()
     {

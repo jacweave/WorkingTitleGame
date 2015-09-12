@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class BaseInstance : MonoBehaviour
+public class BaseInstance
 {
     //Fields
     #region BaseInstance/Fields
@@ -20,7 +20,8 @@ public class BaseInstance : MonoBehaviour
     #region BaseInstance/Constructors
     public BaseInstance()
     {
-        Players = new List<BasePlayer> { (HumanPlayer)SessionHandler.Session["Players"], new AIPlayer() };
+        Debug.Log(SessionHandler.GetSessionVariable("Player"));
+        Players = new List<BasePlayer> { (HumanPlayer)SessionHandler.GetSessionVariable("Player"), new AIPlayer() };
     }
 
     public BaseInstance(List<BasePlayer> p)
@@ -35,14 +36,4 @@ public class BaseInstance : MonoBehaviour
         Players = p;
     }
     #endregion
-
-    // Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 }

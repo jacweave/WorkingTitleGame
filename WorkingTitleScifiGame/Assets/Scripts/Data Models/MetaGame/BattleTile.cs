@@ -9,10 +9,10 @@ public class BattleTile : BaseTile {
     private Dictionary<BasePlayer, bool> _visPlayer;
     private static Dictionary<string, int> _priorities = new Dictionary<string,int> { { "Building", 1 },
                                                                                       { "Unit", 2 }, 
-                                                                                      { "Indicator", 3 },
-                                                                                      { "Fog", 4 } };
-    private static SpriteRenderer _indicator;
-    private static SpriteRenderer _fog;
+                                                                                      { "Fog", 3 },
+                                                                                      { "Indicator", 4 } };
+    private static Sprite _indicator;
+    private static Sprite _fog;
     private bool _indicate;
     #endregion
 
@@ -20,8 +20,8 @@ public class BattleTile : BaseTile {
     #region BattleTile/Properties
     public Dictionary<BasePlayer, bool> PlayerVisibility { get { return _visPlayer; } set { _visPlayer = value; } }
     public static Dictionary<string, int> Priorities { get { return _priorities; } }
-    public static SpriteRenderer Indicator { get { return _indicator; } set { _indicator = value; } }
-    public static SpriteRenderer Fog { get { return _fog; } set { _fog = value; } }
+    public static Sprite Indicator { get { return _indicator; } set { _indicator = value; } }
+    public static Sprite Fog { get { return _fog; } set { _fog = value; } }
     public bool Indicate { get { return _indicate; } set { _indicate = value; } }
     #endregion
 
@@ -36,17 +36,12 @@ public class BattleTile : BaseTile {
     {
         
     }
-    #endregion
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    public BattleTile(int x, int y) : base(new Dimension(x, y))
+    {
+
+    }
+    #endregion
 
     public void SetVisible(BasePlayer p)
     {
@@ -66,11 +61,24 @@ public class BattleTile : BaseTile {
     public void SetIndicate(Color c)
     {
         Indicate = true;
-        Indicator.color = c;
+        Renderer.color = c;
     }
 
     public void DesetIndicate()
     {
         Indicate = false;
+    }
+
+    public override void OnUpdate()
+    {
+ 	     base.OnUpdate();
+        if (CheckVisibility((BasePlayer)SessionHandler.Session["Player"]))
+        {
+            Renderer.enabled = true;
+        }
+        else
+        {
+            Renderer.enabled = false;
+        }
     }
 }

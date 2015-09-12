@@ -2,13 +2,13 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class BaseTile : MonoBehaviour {
+public class BaseTile : BaseObject {
 
     //Fields
     #region BaseTile/Fields
     private List<object> _contents;
     private Dimension _pos;
-    private SpriteRenderer _emptySprite;
+    private Sprite _emptySprite;
     #endregion
 
     //Properties
@@ -17,33 +17,31 @@ public class BaseTile : MonoBehaviour {
     public Dimension Position { get { return _pos; } set { _pos = value; } }
     public int PositionX { get { return _pos.X; } set { _pos.X = value; } }
     public int PositionY { get { return _pos.Y; } set { _pos.Y = value; } }
-    public SpriteRenderer EmptySprite { get { return _emptySprite; } set { _emptySprite = value; } }
+    public Sprite EmptySprite { get { return _emptySprite; } set { _emptySprite = value; } }
     #endregion
+
+    protected override void Init()
+    {
+        base.Init();
+    }
 
     //Constructoors
     #region BaseTile/Constructors
-    public BaseTile()
+    public BaseTile() : base()
     {
 
     }
 
-    public BaseTile(Dimension d)
+    public BaseTile(Dimension d) : base()
     {
+        Init();
         Position = d;
-        EmptySprite = new SpriteRenderer();
-        EmptySprite.sprite = Resources.Load<Sprite>("Art/Sprites/EmptyTile");
+        EmptySprite = new Sprite();
+        EmptySprite = Resources.Load<Sprite>("Art/Sprites/EmptyTile");
+        Renderer.sprite = EmptySprite;
+        Transform.position = new Vector3((float)d.X, (float)d.Y, 0f);
     }
     #endregion
-
-    // Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 
     public bool IsEmpty()
     {
@@ -58,5 +56,10 @@ public class BaseTile : MonoBehaviour {
     public bool RemoveContent(object o)
     {
         return Contents.Remove(o);
+    }
+
+    public override void OnUpdate()
+    {
+ 	    base.OnUpdate();
     }
 }

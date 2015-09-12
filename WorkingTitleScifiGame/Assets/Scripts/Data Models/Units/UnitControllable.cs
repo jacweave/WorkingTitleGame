@@ -36,16 +36,6 @@ public class UnitControllable : BaseControllable {
     }
     #endregion
 
-    // Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-
     public void DealDamage(int damage)
     {
         try
@@ -66,7 +56,7 @@ public class UnitControllable : BaseControllable {
     private void OnDestroyed()
     {
         //DO THINGS THEN DESTROY OBJECT
-        Destroy(this);
+        DestroyObject();
     }
 
     public bool CheckDestroyed()

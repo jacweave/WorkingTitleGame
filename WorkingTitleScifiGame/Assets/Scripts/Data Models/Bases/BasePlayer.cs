@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class BasePlayer : MonoBehaviour {
+public class BasePlayer {
 
     //Fields
     #region BasePlayer/Fields
@@ -21,16 +21,6 @@ public class BasePlayer : MonoBehaviour {
     public string Identifier { get { return _id; } set { _id = value; } }
     public bool EndTurn { get { return _end; } set { _end = value; } }
     #endregion
-
-    // Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 
     public void FinishTurn()
     {
