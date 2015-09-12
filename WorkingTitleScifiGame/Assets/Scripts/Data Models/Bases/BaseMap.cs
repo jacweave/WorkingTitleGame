@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 
-public class BaseMap : MonoBehaviour
+public class BaseMap
 {
 
     //Fields
@@ -50,16 +50,6 @@ public class BaseMap : MonoBehaviour
         Background = Resources.Load<Texture>("Art/Backgrounds/BackgroundPH.png");
     }
     #endregion
-
-    // Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 
     #region BaseMap/GetTile
     public BaseTile GetTileAt(Dimension location)

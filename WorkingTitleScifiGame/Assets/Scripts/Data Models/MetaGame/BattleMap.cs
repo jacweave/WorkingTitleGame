@@ -4,7 +4,7 @@ using System.Collections;
 public class BattleMap : BaseMap {
 
     //Fields
-    private bool _fogOfWar;
+    private bool _fogOfWar = true;
 
     //Properties
     public bool FogOfWar { get { return _fogOfWar; } set { _fogOfWar = value; } }
@@ -18,17 +18,23 @@ public class BattleMap : BaseMap {
 
     public BattleMap(Dimension dim) : base(dim)
     {
-        FogOfWar = true;
+        for (int i = 0; i < dim.X; i++)
+        {
+            for (int j = 0; j < dim.Y; j++)
+            {
+                Tiles[i, j] = new BattleTile(i, j);
+            }
+        }
     }
 
     public BattleMap(BattleTile[,] tile) : base(tile)
     {
-        FogOfWar = true;
+        
     }
 
     public BattleMap(Dimension dim, BaseTile[,] tile) : base(dim, tile)
     {
-        FogOfWar = true;
+        
     }
     #endregion
 
@@ -41,4 +47,10 @@ public class BattleMap : BaseMap {
 	void Update () {
 	
 	}
+
+    public static BattleMap RandomMap()
+    {
+        var map = BaseMap.RandomMap();
+        return new BattleMap(new Dimension(map.Tiles.GetUpperBound(0), map.Tiles.GetUpperBound(1)));
+    }
 }

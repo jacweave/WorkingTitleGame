@@ -2,11 +2,11 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class SessionHandler : MonoBehaviour {
+public class SessionHandler {
 
     //Fields
     #region SessionHandler/Fields
-    private static Dictionary<string, object> _session;
+    private static Dictionary<string, object> _session = new Dictionary<string, object> { { "Player", new HumanPlayer { Name = "Human", Units = new List<UnitControllable>(), Buildings = new List<BuildingControllable>(), Identifier = "1", Resource = 0 } } };
     #endregion
 
     //Properties
@@ -14,15 +14,13 @@ public class SessionHandler : MonoBehaviour {
     public static Dictionary<string, object> Session { get { return _session; } set { _session = value; } }
     #endregion
 
-    // Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    //Constructors
+    #region SessionHandler/Constructors
+    static SessionHandler()
+    {
+        Session = new Dictionary<string, object>();
+    }
+    #endregion
 
     public static object GetSessionVariable(string key)
     {
