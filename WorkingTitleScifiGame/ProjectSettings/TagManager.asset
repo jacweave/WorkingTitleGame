@@ -50,3 +50,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Tiles
+    uniqueID: 2918076327
+    locked: 0
+  - name: Buildings
+    uniqueID: 4284571401
+    locked: 0
+  - name: Units
+    uniqueID: 3539492963
+    locked: 0
+  - name: Fog
+    uniqueID: 2449442695
+    locked: 0
+  - name: Indicators
+    uniqueID: 1112643293
+    locked: 0

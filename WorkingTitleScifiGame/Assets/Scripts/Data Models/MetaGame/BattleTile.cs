@@ -27,19 +27,29 @@ public class BattleTile : BaseTile {
 
     //Constructoors
     #region BattleTile/Constructors
+    protected override void Init()
+    {
+        base.Init();
+        PlayerVisibility = new Dictionary<BasePlayer, bool>();
+        foreach(BasePlayer p in ((BattleInstance)(SessionHandler.GetSessionVariable(Enums.SessVars.ActiveInst))).Players)
+        {
+            PlayerVisibility.Add(p, false);
+        }
+    }
+
     public BattleTile() : base()
     {
-
+        Init();
     }
 
     public BattleTile(Dimension d) : base(d)
     {
-        
+        Init();
     }
 
     public BattleTile(int x, int y) : base(new Dimension(x, y))
     {
-
+        Init();
     }
     #endregion
 
@@ -72,7 +82,7 @@ public class BattleTile : BaseTile {
     public override void OnUpdate()
     {
  	     base.OnUpdate();
-        if (CheckVisibility((BasePlayer)SessionHandler.Session["Player"]))
+        if (CheckVisibility((BasePlayer)SessionHandler.GetSessionVariable(Enums.SessVars.LocalPlayer)))
         {
             Renderer.enabled = true;
         }

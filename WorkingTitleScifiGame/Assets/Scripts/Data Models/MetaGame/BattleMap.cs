@@ -11,13 +11,18 @@ public class BattleMap : BaseMap {
 
     //Constructors
      #region BattleMap/Constructors
+    protected override void Init()
+    {
+        base.Init();
+    }
     public BattleMap() : base()
     {
-
+        Init();
     }
 
     public BattleMap(Dimension dim) : base(dim)
     {
+        Init();
         for (int i = 0; i < dim.X; i++)
         {
             for (int j = 0; j < dim.Y; j++)

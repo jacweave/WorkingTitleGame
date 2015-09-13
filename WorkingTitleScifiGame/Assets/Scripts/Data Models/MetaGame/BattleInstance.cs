@@ -10,6 +10,7 @@ public class BattleInstance : BaseInstance {
     private List<UnitBuildable> _units;
     private List<BuildingBuildable> _buildings;
     private Queue<BasePlayer> _turnTrack;
+    private Camera _cam;
     #endregion
 
     //Properties
@@ -18,15 +19,18 @@ public class BattleInstance : BaseInstance {
     public List<UnitBuildable> Units { get { return _units; } set { _units = value; } }
     public List<BuildingBuildable> Buildings { get { return _buildings; } set { _buildings = value; } }
     public Queue<BasePlayer> TurnTracker { get { return _turnTrack; } set { _turnTrack = value; } }
+    public Camera InstanceCamera { get { return _cam; } set { _cam = value; } }
     #endregion
 
     //Constructors
     #region BattleInstance/Constructors
     void Init()
     {
+        InstanceCamera = (Camera)SessionHandler.GetSessionVariable(Enums.SessVars.Camera);
+        SessionHandler.SetSessionVariable(Enums.SessVars.ActiveInst, this);
         Units = XMLHandler.LoadUnitBuildables();
         Buildings = XMLHandler.LoadBuildingBuildables();
-        //PlayerTurn = Players[0];
+        PlayerTurn = Players[0];
         TurnTracker = new Queue<BasePlayer>(Players.GetRange(1, Players.Count - 1));
         PlayerTurn.StartTurn();
     }
@@ -40,6 +44,7 @@ public class BattleInstance : BaseInstance {
     {
         Init();
         Map = BattleMap.RandomMap();
+        InstanceCamera.transform.position = new Vector3(Map.DimensionX / 2, Map.DimensionY / 2, InstanceCamera.transform.position.z); 
     }
 
     public BattleInstance(BattleMap map, List<BasePlayer> p) : base(map, p)
@@ -62,6 +67,6 @@ public class BattleInstance : BaseInstance {
 
     public bool IsLocalTurn()
     {
-        return PlayerTurn.Equals(SessionHandler.Session["Player"]);
+        return PlayerTurn.Equals(SessionHandler.GetSessionVariable(Enums.SessVars.LocalPlayer));
     }
 }
