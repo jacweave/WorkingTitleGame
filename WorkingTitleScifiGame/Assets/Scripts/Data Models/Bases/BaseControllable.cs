@@ -32,17 +32,16 @@ public class BaseControllable : BaseObject {
 
     }
 
-    public BaseControllable(int vRange, BasePlayer ownr, int s, Dimension p, string spriteLoc, bool actStatus = true)
+    public BaseControllable(int vRange, BasePlayer ownr, int s, Dimension p, Sprite sprite, bool actStatus = true) 
     {
         Init();
         VisibilityRange = vRange;
         Owner = ownr;
         Size = s;
         Position = p;
-        Sprite = new Sprite();
-        Sprite = Resources.Load<Sprite>(spriteLoc);
+        Sprite = sprite;
         ActionStatus = actStatus;
-        Object = new GameObject();
+        Renderer.sprite = sprite;
     }
     #endregion
 }

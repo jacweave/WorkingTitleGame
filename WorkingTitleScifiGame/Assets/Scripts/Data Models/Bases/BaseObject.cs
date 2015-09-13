@@ -2,24 +2,25 @@
 using System.Collections;
 
 public class BaseObject {
-
-    private GameObject _object;
-
-    public GameObject Obj { get { return _object; } set { _object = value; } }
-    public SpriteRenderer Renderer { get { return _object.GetComponent<SpriteRenderer>(); } }
-    public Transform Transform { get { return _object.transform; } }
+    
+    public GameObject Obj;
+    public SpriteRenderer Renderer { get { return Obj.GetComponent<SpriteRenderer>(); } }
+    public Transform Transform { get { return Obj.transform; } }
 
     protected virtual void Init()
     {
-        Obj = new GameObject();
-        Obj.AddComponent<ObjectHandler>();
-        Obj.AddComponent<SpriteRenderer>();
-        Obj.GetComponent<ObjectHandler>().Updater = OnUpdate;
+        if (Obj == null)
+        {
+            Obj = new GameObject();
+            Obj.AddComponent<ObjectHandler>();
+            Obj.AddComponent<SpriteRenderer>();
+            Obj.GetComponent<ObjectHandler>().Updater = OnUpdate;
+        }
     }
 
     protected void DestroyObject()
     {
-        GameObject.Destroy(Obj);
+
     }
 
     public virtual void OnUpdate()

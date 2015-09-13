@@ -26,7 +26,6 @@ public class BaseInstance
     public BaseInstance(List<BasePlayer> p)
     {
         Players = p;
-        Map = BaseMap.RandomMap();
     }
 
     public BaseInstance(BaseMap m, List<BasePlayer> p)

@@ -25,13 +25,18 @@ public class UnitBuildable : BaseBuildable {
     public int MainActionRange { get { return _mainRange; } set { _mainRange = value; } }
     #endregion
 
-    // Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    //Constructors
+    #region UnitBuildable/Constructors
+    public UnitBuildable() : base()
+    {
+
+    }
+    #endregion
+
+    public UnitControllable ToControllable(BasePlayer ownr, Dimension pos)
+    {
+        var unit = new UnitControllable(MoveRange, HealthCapacity, DefenseStat, OffenseStat, MainActionRange, VisibilityRange, ownr, Size, pos, Sprite, true);
+        
+        return unit;
+    }
 }

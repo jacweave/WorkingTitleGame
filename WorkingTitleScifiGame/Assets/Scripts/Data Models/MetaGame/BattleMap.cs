@@ -22,7 +22,7 @@ public class BattleMap : BaseMap {
 
     public BattleMap(Dimension dim) : base(dim)
     {
-        Init();
+        Tiles = new BattleTile[dim.X, dim.Y];
         for (int i = 0; i < dim.X; i++)
         {
             for (int j = 0; j < dim.Y; j++)
@@ -55,7 +55,9 @@ public class BattleMap : BaseMap {
 
     public static BattleMap RandomMap()
     {
-        var map = BaseMap.RandomMap();
-        return new BattleMap(new Dimension(map.Tiles.GetUpperBound(0), map.Tiles.GetUpperBound(1)));
+        var rX = UnityEngine.Random.Range(15, 51);
+        var rY = UnityEngine.Random.Range(15, 51);
+
+        return new BattleMap(new Dimension(rX, rY));
     }
 }

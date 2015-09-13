@@ -6,7 +6,7 @@
 		<VisibilityRange>5</VisibilityRange>
 		<Size>1</Size>
 		<weight>2</weight>				<!--weight affects the ability of the unit to pass terrain-->
-		<SpritePath>...</SpritePath>			<!-- Should be path to sprite resource; Art/Sprites/Units/... -->
+		<SpritePath>Art/Sprites/Units/DestroyerUnitPH</SpritePath>			<!-- Should be path to sprite resource; Art/Sprites/Units/... -->
 		<MoveRange>4</MoveRange>
 		<HealthCapacity>10</HealthCapacity>
 		<DefenseStat>2</DefenseStat>

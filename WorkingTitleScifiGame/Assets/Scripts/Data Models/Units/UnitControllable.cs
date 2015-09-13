@@ -35,9 +35,13 @@ public class UnitControllable : BaseControllable {
         
     }
 
-    public UnitControllable(int vRange, BasePlayer ownr, int s, Dimension p, string spriteLoc, bool actStatus = true) : base(vRange, ownr, s, p, spriteLoc, actStatus)
+    public UnitControllable(int mRange, int hCap, int dStat, int oStat, int maRange, int vRange, BasePlayer ownr, int s, Dimension p, Sprite sprite, bool actStatus = true) : base(vRange, ownr, s, p, sprite, actStatus)
     {
-
+        MoveRange = mRange;
+        HealthCapacity = hCap;
+        DefenseStat = dStat;
+        OffenseStat = oStat;
+        MainActionRange = maRange;
     }
     #endregion
 

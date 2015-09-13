@@ -33,7 +33,7 @@ public class BattleTile : BaseTile {
         PlayerVisibility = new Dictionary<BasePlayer, bool>();
         foreach(BasePlayer p in ((BattleInstance)(SessionHandler.GetSessionVariable(Enums.SessVars.ActiveInst))).Players)
         {
-            PlayerVisibility.Add(p, false);
+            PlayerVisibility.Add(p, true);
         }
     }
 

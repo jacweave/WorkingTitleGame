@@ -42,7 +42,6 @@ public class BaseMap : BaseObject
     {
         Init();
         Dimensions = dim;
-        Tiles = new BaseTile[dim.X, dim.Y];
         Background = Resources.Load<Sprite>("Art/Backgrounds/BackgroundPHMat");
     }
 

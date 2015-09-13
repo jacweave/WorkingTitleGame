@@ -33,6 +33,7 @@ public class BattleInstance : BaseInstance {
         PlayerTurn = Players[0];
         TurnTracker = new Queue<BasePlayer>(Players.GetRange(1, Players.Count - 1));
         PlayerTurn.StartTurn();
+        PlayerTurn.Units.Add(Units[0].ToControllable(PlayerTurn, new Dimension(0, 0)));
     }
 
     public BattleInstance() : base()

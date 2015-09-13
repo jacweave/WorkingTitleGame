@@ -23,11 +23,13 @@ public class BaseTile : BaseObject {
     protected override void Init()
     {
         base.Init();
+        EmptySprite = Resources.Load<Sprite>("Art/Sprites/EmptyTile");
+        Renderer.sprite = EmptySprite;
     }
 
     //Constructoors
     #region BaseTile/Constructors
-    public BaseTile() : base()
+    public BaseTile()
     {
 
     }
@@ -36,9 +38,7 @@ public class BaseTile : BaseObject {
     {
         Init();
         Position = d;
-        EmptySprite = new Sprite();
-        EmptySprite = Resources.Load<Sprite>("Art/Sprites/EmptyTile");
-        Renderer.sprite = EmptySprite;
+        //EmptySprite = new Sprite();
         Transform.position = new Vector3((float)d.X, (float)d.Y, 0f);
     }
     #endregion
@@ -61,5 +61,10 @@ public class BaseTile : BaseObject {
     public override void OnUpdate()
     {
  	    base.OnUpdate();
+    }
+
+    ~BaseTile()
+    {
+        DestroyObject();
     }
 }

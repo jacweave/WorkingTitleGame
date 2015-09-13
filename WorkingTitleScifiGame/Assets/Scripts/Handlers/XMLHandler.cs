@@ -26,10 +26,10 @@ public class XMLHandler {
 	
 	}
 
-    private static Dictionary<string,object> ReadBuildable(string path)
+    private static Dictionary<string,string> ReadBuildable(string path)
     {
         Reader = new XmlTextReader(path);
-        Dictionary<string, object> attrDict = new Dictionary<string, object>();
+        Dictionary<string, string> attrDict = new Dictionary<string, string>();
         Reader.ReadToFollowing("Buildable");
         Reader.ReadToFollowing("BuildableType");
         attrDict.Add("BuildableType", Reader.Value);
@@ -63,18 +63,17 @@ public class XMLHandler {
     {
         var attrDict = ReadBuildable(path);
 
-        UnitBuildable unit = new UnitBuildable
+        var unit = new UnitBuildable
         {
-            VisibilityRange = (int)attrDict["VisibilityRange"],
-            Size = (int)attrDict["Size"],
-            Sprite = new SpriteRenderer(),
-            MoveRange = (int)attrDict["MoveRange"],
-            HealthCapacity = (int)attrDict["HealthCapacity"],
-            DefenseStat = (int)attrDict["DefenseStat"],
-            OffenseStat = (int)attrDict["OffenseStat"],
-            MainActionRange = (int)attrDict["MainActionRange"]
+            VisibilityRange = int.Parse(attrDict["VisibilityRange"]),
+            Size = int.Parse(attrDict["Size"]),
+            Sprite = Resources.Load<Sprite>(attrDict["SpritePath"]),
+            MoveRange = int.Parse(attrDict["MoveRange"]),
+            HealthCapacity = int.Parse(attrDict["HealthCapacity"]),
+            DefenseStat = int.Parse(attrDict["DefenseStat"]),
+            OffenseStat = int.Parse(attrDict["OffenseStat"]),
+            MainActionRange = int.Parse(attrDict["MainActionRange"])
         };
-        unit.Sprite.sprite = Resources.Load<Sprite>(attrDict["SpritePath"].ToString());
 
         return unit;
     }
@@ -85,12 +84,11 @@ public class XMLHandler {
 
         BuildingBuildable building = new BuildingBuildable
         {
-            VisibilityRange = (int)attrDict["VisibilityRange"],
-            Size = (int)attrDict["Size"],
-            Sprite = new SpriteRenderer(),
-            CapturePoints = (int)attrDict["CapturePoints"]
+            VisibilityRange = int.Parse(attrDict["VisibilityRange"]),
+            Size = int.Parse(attrDict["Size"]),
+            Sprite = Resources.Load<Sprite>(attrDict["SpritePath"]),
+            CapturePoints = int.Parse(attrDict["CapturePoints"])
         };
-        building.Sprite.sprite = Resources.Load<Sprite>(attrDict["SpritePath"].ToString());
 
         return building;
     }
@@ -101,6 +99,10 @@ public class XMLHandler {
         var xmls = Directory.GetFiles(Directory.GetCurrentDirectory() + "\\Assets\\Resources\\XML\\Buildings");
         foreach (var p in xmls)
         {
+            if (!p.EndsWith(".xml"))
+            {
+                continue;
+            }
             buildables.Add(FillBuilding(p));
         }
 
@@ -113,6 +115,10 @@ public class XMLHandler {
         var xmls = Directory.GetFiles(Directory.GetCurrentDirectory() + "\\Assets\\Resources\\XML\\Units");
         foreach (var p in xmls)
         {
+            if (!p.EndsWith(".xml"))
+            {
+                continue;
+            }
             buildables.Add(FillUnit(p));
         }
 
