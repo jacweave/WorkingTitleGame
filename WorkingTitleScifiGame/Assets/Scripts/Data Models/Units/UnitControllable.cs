@@ -34,6 +34,11 @@ public class UnitControllable : BaseControllable {
     {
         
     }
+
+    public UnitControllable(int vRange, BasePlayer ownr, int s, Dimension p, string spriteLoc, bool actStatus = true) : base(vRange, ownr, s, p, spriteLoc, actStatus)
+    {
+
+    }
     #endregion
 
     public void DealDamage(int damage)

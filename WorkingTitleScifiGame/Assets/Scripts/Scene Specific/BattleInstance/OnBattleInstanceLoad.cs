@@ -10,7 +10,8 @@ public class OnBattleInstanceLoad : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        Instance = new BattleInstance(new List<BasePlayer> { (HumanPlayer)SessionHandler.GetSessionVariable("Player"), new AIPlayer() });
+        SessionHandler.SetSessionVariable(Enums.SessVars.Camera, gameObject.GetComponent<Camera>());
+        Instance = new BattleInstance(new List<BasePlayer> { (HumanPlayer)SessionHandler.GetSessionVariable(Enums.SessVars.LocalPlayer), new AIPlayer() });
 	}
 	
 	// Update is called once per frame

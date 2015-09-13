@@ -20,8 +20,7 @@ public class BaseInstance
     #region BaseInstance/Constructors
     public BaseInstance()
     {
-        Debug.Log(SessionHandler.GetSessionVariable("Player"));
-        Players = new List<BasePlayer> { (HumanPlayer)SessionHandler.GetSessionVariable("Player"), new AIPlayer() };
+        Players = new List<BasePlayer> { (HumanPlayer)SessionHandler.GetSessionVariable(Enums.SessVars.LocalPlayer), new AIPlayer() };
     }
 
     public BaseInstance(List<BasePlayer> p)

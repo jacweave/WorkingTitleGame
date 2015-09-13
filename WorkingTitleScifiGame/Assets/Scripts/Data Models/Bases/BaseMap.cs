@@ -3,14 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 
-public class BaseMap
+public class BaseMap : BaseObject
 {
 
     //Fields
     #region BaseMap/Fields
     private Dimension _dim;
     private BaseTile[,] _tiles;
-    private Texture _bg;
+    private Sprite _bg;
     #endregion
 
     //Properties
@@ -19,35 +19,47 @@ public class BaseMap
     public int DimensionY { get { return _dim.Y; } set { _dim.Y = value; } }
     public Dimension Dimensions { get { return _dim; } set { _dim = value; } }
     public BaseTile[,] Tiles { get { return _tiles; } set { _tiles = value; } }
-    public Texture Background { get { return _bg; } set { _bg = value; } }
+    public Sprite Background { get { return _bg; } set { _bg = value; } }
     #endregion
 
     //Constructors
     #region BaseMap/Constructors
-    public BaseMap()
+    protected override void Init()
     {
-
+        base.Init();
+        Background = Resources.Load<Sprite>("Art/Backgrounds/BackgroundPH");
+        Renderer.sortingLayerName = Enums.GetLayerName(Enums.SortingLayers.BgLayer);
+        Renderer.sprite = Resources.Load<Sprite>("Art/Backgrounds/BackgroundPH");
+        Transform.localScale = new Vector3(100f, 100f, 0f);
+        Transform.position = new Vector3(-10f, -10f, 0f);
+    }
+    public BaseMap() : base()
+    {
+        Init();
     }
 
-    public BaseMap(Dimension dim)
+    public BaseMap(Dimension dim) : base()
     {
+        Init();
         Dimensions = dim;
         Tiles = new BaseTile[dim.X, dim.Y];
-        Background = Resources.Load<Texture>("Art/Backgrounds/BackgroundPH.png");
+        Background = Resources.Load<Sprite>("Art/Backgrounds/BackgroundPHMat");
     }
 
     public BaseMap(BaseTile[,] tile)
     {
+        Init();
         Tiles = tile;
         Dimensions = new Dimension(tile.GetUpperBound(0) + 1, tile.GetUpperBound(1) + 1);
-        Background = Resources.Load<Texture>("Art/Backgrounds/BackgroundPH.png");
+        Background = Resources.Load<Sprite>("Art/Backgrounds/BackgroundPHMat");
     }
 
     public BaseMap(Dimension dim, BaseTile[,] tile)
     {
+        Init();
         Dimensions = dim;
         Tiles = tile;
-        Background = Resources.Load<Texture>("Art/Backgrounds/BackgroundPH.png");
+        Background = Resources.Load<Sprite>("Art/Backgrounds/BackgroundPHMat");
     }
     #endregion
 
